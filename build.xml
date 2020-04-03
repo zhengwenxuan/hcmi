@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="hjw_contract_manager_Interface" basedir="../hjw_contract_manager2.0" default="jar">
+    <property name="name" value="hjw_contract_manager2.2.0.7"/>
+    <property name="war.dir" value="WebRoot"/>
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="${war.dir}/WEB-INF/classes"/>
+    <property name="weblib.dir" value="${war.dir}/WEB-INF/lib"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="db.dir" value="db"/>
+    <property name="spring.root" value="../.."/>
+    <property file="build.properties"/>
+    <path id="master-classpath">
+        <fileset dir="${war.dir}/WEB-INF/lib">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${tomcat.home}/lib">
+            <include name="servlet*.jar"/>
+        </fileset>
+        <pathelement path="${build.dir}"/>
+    </path>
+    <target name="clean" description="Clean output dirs (build, docs, testbuild, testreports, weblib, dist)">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+    <target name="build" description="Compile main source tree java files into class files, generate jar files" depends="clean">
+        <mkdir dir="${build.dir}"/>
+        <javac destdir="${build.dir}" Encoding="UTF-8" includeantruntime="false" target="1.7" debug="true" deprecation="false" optimize="false" failonerror="true">
+            <src path="${src.dir}"/>
+            <classpath refid="master-classpath"/>
+        	<compilerarg value="-Xlint:unchecked"/> 
+        </javac>
+        <javac destdir="..\hjw_contract_manager_Interface\bin" Encoding="UTF-8" includeantruntime="false" target="1.7" debug="true" deprecation="false" optimize="false" failonerror="true">
+            <src path="..\hjw_contract_manager_Interface\src"/>
+            <classpath refid="master-classpath"/>
+        	<compilerarg value="-Xlint:unchecked"/> 
+        </javac>
+        <copy todir="${build.dir}" preservelastmodified="true">
+            <fileset dir="${src.dir}">
+                <include name="**/*.xml"/>
+                <include name="**/*.properties"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="jar" depends="build" description="Generate jar file">
+        <jar jarfile="..\hjw_contract_manager_Interface/hjw-interface1.1.0.jar" basedir="..\hjw_contract_manager_Interface\bin">
+        </jar>
+    </target>
+</project>

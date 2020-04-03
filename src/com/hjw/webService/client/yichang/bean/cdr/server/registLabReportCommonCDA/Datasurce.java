@@ -1,0 +1,32 @@
+package com.hjw.webService.client.yichang.bean.cdr.server.registLabReportCommonCDA;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+import com.hjw.interfaces.util.JaxbUtil;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "Datasurce")  
+@XmlType(propOrder = {})
+public class Datasurce {
+
+	@XmlElement
+	private XmlIn_registLabReportCommonCDA xmlIn_registLabReportCommonCDA = new XmlIn_registLabReportCommonCDA();
+	
+	public XmlIn_registLabReportCommonCDA getXmlIn_registLabReportCommonCDA() {
+		return xmlIn_registLabReportCommonCDA;
+	}
+	
+	public void setXmlIn_registLabReportCommonCDA(XmlIn_registLabReportCommonCDA xmlIn_registLabReportCommonCDA) {
+		this.xmlIn_registLabReportCommonCDA = xmlIn_registLabReportCommonCDA;
+	}
+	
+	public static void main(String[] args) throws Exception {
+		String xml = "<Datasurce><xmlIn_registLabReportCommonCDA><documentTypeCode>C0007-1</documentTypeCode><documentTypeName>常规检验报告</documentTypeName><documentTitle>生化检验检验报告</documentTitle><reportNo>2036674</reportNo><examineApplyNo>N5168823</examineApplyNo><barNo>18060100211</barNo><deptName>简易门诊</deptName><deptCode>9516</deptCode><inpatientAreaName/><patientId>0000228613</patientId><clinicType>01</clinicType><clinicSerialNo/><diagnosisNo>0000228613</diagnosisNo><patientName>魏红</patientName><sex_code>2</sex_code><sex_name>女性</sex_name><age>57.0岁</age><diagnosis>待查</diagnosis><applicationDoctorCode>001731</applicationDoctorCode><applicationDoctorName>朱德林</applicationDoctorName><specimenNurseCode/><specimenNurseName/><specimenReceiveDate>2018-06-01T08:30:05</specimenReceiveDate><examineApplyDate>2018-06-01T00:00:00</examineApplyDate><examineReportDate>2018-06-01T10:34:55</examineReportDate><specimenCategories>血液</specimenCategories><specimenCollectCollectPosition/><hisItemid>782</hisItemid><hisItemname>血脂4项</hisItemname><inspectorCode>000611</inspectorCode><inspectorName>李江陵</inspectorName><reviewerCode>000607</reviewerCode><reviewerName>鲁莉</reviewerName><acceptanceDate>2018-06-01T08:06:07</acceptanceDate><resultDescription/><examResultList><abnormalFlag/><checkOrgCode/><checkOrgName/><criticalValuesFlag>0</criticalValuesFlag><criticalValuesReference/><cutOff/><detailExamProjectCode>LDL-C</detailExamProjectCode><detailExamProjectName>低密度脂蛋白胆固醇</detailExamProjectName><examApplyNo>N5168823</examApplyNo><examDeviceCode/><examMethod>均相酶比色法</examMethod><examResult>定性</examResult><itemCode/><itmeName/><odValue/><orderItemCode>F00000073395</orderItemCode><orderItemName>血脂4项</orderItemName><printOrder>052</printOrder><referenceRange>2.1～3.3</referenceRange><reportNo/><requestNo/><result>3.03</result><resultDate>2018-06-01T10:34:54</resultDate><reviewFlag/><sco/><unit>mmol/L</unit></examResultList><examResultList><abnormalFlag/><checkOrgCode/><checkOrgName/><criticalValuesFlag>0</criticalValuesFlag><criticalValuesReference/><cutOff/><detailExamProjectCode>HDL-C</detailExamProjectCode><detailExamProjectName>高密度脂蛋白胆固醇</detailExamProjectName><examApplyNo>N5168823</examApplyNo><examDeviceCode/><examMethod>均相酶比色法</examMethod><examResult>定性</examResult><itemCode/><itmeName/><odValue/><orderItemCode>F00000073395</orderItemCode><orderItemName>血脂4项</orderItemName><printOrder>051</printOrder><referenceRange>1.1～1.9</referenceRange><reportNo/><requestNo/><result>1.20</result><resultDate>2018-06-01T10:34:54</resultDate><reviewFlag/><sco/><unit>mmol/L</unit></examResultList><examResultList><abnormalFlag>↑</abnormalFlag><checkOrgCode/><checkOrgName/><criticalValuesFlag>0</criticalValuesFlag><criticalValuesReference/><cutOff/><detailExamProjectCode>TG</detailExamProjectCode><detailExamProjectName>甘油三脂</detailExamProjectName><examApplyNo>N5168823</examApplyNo><examDeviceCode/><examMethod/><examResult>定性</examResult><itemCode/><itmeName/><odValue/><orderItemCode>F00000073395</orderItemCode><orderItemName>血脂4项</orderItemName><printOrder>050</printOrder><referenceRange>0.3～1.71</referenceRange><reportNo/><requestNo/><result>1.79</result><resultDate>2018-06-01T10:34:54</resultDate><reviewFlag/><sco/><unit>mmol/L</unit></examResultList><examResultList><abnormalFlag/><checkOrgCode/><checkOrgName/><criticalValuesFlag>0</criticalValuesFlag><criticalValuesReference/><cutOff/><detailExamProjectCode>CHO</detailExamProjectCode><detailExamProjectName>总胆固醇</detailExamProjectName><examApplyNo>N5168823</examApplyNo><examDeviceCode/><examMethod>胆固醇氧化酶法</examMethod><examResult>定性</examResult><itemCode/><itmeName/><odValue/><orderItemCode>F00000073395</orderItemCode><orderItemName>血脂4项</orderItemName><printOrder>049</printOrder><referenceRange>3.36～5.7</referenceRange><reportNo/><requestNo/><result>4.37</result><resultDate>2018-06-01T10:34:54</resultDate><reviewFlag/><sco/><unit>mmol/L</unit></examResultList><examResultList><abnormalFlag/><checkOrgCode/><checkOrgName/><criticalValuesFlag>0</criticalValuesFlag><criticalValuesReference/><cutOff/><detailExamProjectCode>DM_SERQ</detailExamProjectCode><detailExamProjectName>血清质量</detailExamProjectName><examApplyNo>N5168823</examApplyNo><examDeviceCode/><examMethod/><examResult>定性</examResult><itemCode/><itmeName/><odValue/><orderItemCode>F00000073395</orderItemCode><orderItemName>血脂4项</orderItemName><printOrder>006</printOrder><referenceRange/><reportNo/><requestNo/><result>正常</result><resultDate>2018-06-01T10:34:54</resultDate><reviewFlag/><sco/><unit/></examResultList><examPicList><picContent/><picNo/><picType/></examPicList><codeExpand/><printStatus/><printDateTime/><patientClassCode/><phoneNumbe/><sickroomNo/><bedNo/><checkApplyDep/><diagnosticCode/><diagnosisDate>2018-06-01T00:00:00</diagnosisDate><checkSampleNo/><specimenState/><specimenSamplingDate>2018-06-01T08:06:07</specimenSamplingDate><checkClass/><inspectExamItemResultCode/><checkTechnicianSign/><checkDoctorSign/><checkReportDep/><checkReportRemark/><reportDoctorSign/><examineDoctorSign/><checkApplyOrgName/><diagnosticInstitutionName/><checkReportOrgName/><documentSubmitDate/><createRecordName/><createRecordDate/><medicalOrgCode/><diagnosticName/><examResultName/></xmlIn_registLabReportCommonCDA></Datasurce>";
+		Datasurce datasurce = JaxbUtil.converyToJavaBean(xml, Datasurce.class);
+		System.out.println(datasurce.getXmlIn_registLabReportCommonCDA().getBarNo());
+	}
+}

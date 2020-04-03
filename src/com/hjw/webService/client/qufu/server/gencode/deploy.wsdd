@@ -1,0 +1,61 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from DataWebService WSDL service -->
+
+  <service name="DataWebServiceSoap" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://www.shats.com/DataReceive"/>
+      <parameter name="wsdlServiceElement" value="DataWebService"/>
+      <parameter name="schemaQualified" value="http://www.shats.com/DataReceive"/>
+      <parameter name="wsdlServicePort" value="DataWebServiceSoap"/>
+      <parameter name="className" value="com.shats.www.DataReceive.DataWebServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="DataWebServiceSoap"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="checkInfoQuery" qname="operNS:checkInfoQuery" xmlns:operNS="http://www.shats.com/DataReceive" returnQName="retNS:Response" xmlns:retNS="http://www.shats.com/DataReceive" returnType="rtns:Response" xmlns:rtns="http://www.shats.com/DataReceive" soapAction="http://www.shats.com/DataReceive/checkInfoQuery" >
+        <parameter qname="pns:request" xmlns:pns="http://www.shats.com/DataReceive" type="tns:Request" xmlns:tns="http://www.shats.com/DataReceive"/>
+      </operation>
+      <parameter name="allowedMethods" value="checkInfoQuery"/>
+
+      <typeMapping
+        xmlns:ns="http://www.shats.com/DataReceive"
+        qname="ns:Response"
+        type="java:com.shats.www.DataReceive.Response"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.shats.com/DataReceive"
+        qname="ns:ResponseHeader"
+        type="java:com.shats.www.DataReceive.ResponseHeader"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.shats.com/DataReceive"
+        qname="ns:Request"
+        type="java:com.shats.www.DataReceive.Request"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.shats.com/DataReceive"
+        qname="ns:RequestHeader"
+        type="java:com.shats.www.DataReceive.RequestHeader"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
